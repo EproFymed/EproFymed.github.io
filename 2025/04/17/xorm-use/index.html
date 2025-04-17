@@ -6,35 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     
-    <title>EproFymed&#39;s Blog</title>
+    <title>一次简单的xorm封装(1)：实例化简单引擎并搭建表结构 | EproFymed&#39;s Blog</title>
 
     <meta name="description" content="EproFymed&#39;s Blog">
     <meta name="keywords" content="">
 
     
 
-
-
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content=""/>
-    <meta property="og:description" content=""/>
     <meta property="og:locale" content="zh" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://eprofymed.github.io/index.html" />
-    <meta property="og:site_name" content="Epro Fymed" />
+    <meta property="og:title" content= "一次简单的xorm封装(1)：实例化简单引擎并搭建表结构 | EproFymed&#39;s Blog"  />
+    <meta property="og:description" content= "EproFymed&#39;s Blog" />
+    <meta property="og:url" content="https://eprofymed.github.io/2025/04/17/xorm-use/index.html" />
+    <meta property="og:site_name" content="" />
+    <meta property="article:author" content="Epro Fymed" />
     <meta property="article:publisher" content="" />
+    <meta property="og:description" content="EproFymed&#39;s Blog" />
+    <meta name="twitter:title" content="一次简单的xorm封装(1)：实例化简单引擎并搭建表结构 | EproFymed&#39;s Blog"/>
+    <meta name="twitter:description" content="EproFymed&#39;s Blog"/>
     <script type="application/ld+json">
         {
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "",
-            "description": "",
+            "description": "EproFymed&#39;s Blog",
+            "author": { "@type": "Person", "name": "Epro Fymed" },
+            "@type": "BlogPosting",
+            "url": "https://eprofymed.github.io/2025/04/17/xorm-use/index.html",
             "publisher": {
-                "@type": "Organization",
-                "name": "Epro Fymed"
+            "@type": "Organization",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://eprofymed.github.ioundefined"
             },
+            "name": "Epro Fymed"
+            },
+            "headline": "一次简单的xorm封装(1)：实例化简单引擎并搭建表结构 | EproFymed&#39;s Blog",
+            "datePublished": "2025-04-17T15:48:49.000Z",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://eprofymed.github.io/2025/04/17/xorm-use/index.html"
+            },
+            "@context": "http://schema.org"
         }
     </script>
+
+
 
 
     
@@ -60,7 +74,7 @@
 
 
     <script>
-        window.isPost = false
+        window.isPost = true
         window.aomori = {
             
             
@@ -125,26 +139,50 @@
         <div class="main">
             <section class="inner">
                 <section class="inner-main">
-                    <div class="index">
-  
-    
-      <article
-id="post-xorm-use"
-class="article article-type-post"
->
+                    <div class="post">
+    <article id="post-cm9ljsjae00047fwu7pnte1ev" class="article article-type-post" itemscope
+    itemprop="blogPost">
 
+    <div class="article-inner">
 
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2025/04/17/xorm-use/">一次简单的xorm封装(1)：实例化简单引擎并搭建表结构</a>
-    </header>
-    <div class="article-entry post-inner-html">
         
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近某项目需要使用Go语言重构相关后台服务，包括数据库板块。其之前使用的是 <code>python-flask</code> + <code>flask orm</code> 套件进行开发，在时间效率和鲁棒性上没有达到理想效果 (<del>根本原因是数据库代码写的太烂了</del>) 故在原有接口的基础上我将使用 <code>Golang</code> 的 <code>XORM</code> 架构重构数据库代码。 (注：其中某些工程代码进行模糊处理)</p>
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      一次简单的xorm封装(1)：实例化简单引擎并搭建表结构
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2025-04-17T15:48:49.000Z" itemprop="datePublished">2025-04-17</time>
+</div>
+
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/" rel="tag">golang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/orm/" rel="tag">orm</a></li></ul>
+            </div>
+            
+
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近某项目需要使用Go语言重构相关后台服务，包括数据库板块。其之前使用的是 <code>python-flask</code> + <code>flask orm</code> 套件进行开发，在时间效率和鲁棒性上没有达到理想效果 (<del>根本原因是数据库代码写的太烂了</del>) 故在原有接口的基础上我将使用 <code>Golang</code> 的 <code>XORM</code> 架构重构数据库代码。 (注：其中某些工程代码进行模糊处理)</p>
 <h1 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h1><h2 id="数据库引擎实例化"><a href="#数据库引擎实例化" class="headerlink" title="数据库引擎实例化"></a>数据库引擎实例化</h2><p>以连接mysql服务需要的数据库信息为例，我们需要为数据库引擎提供连接使用的的四元组信息 <code>dbUser</code>, <code>dbPassword</code>, <code>dbHost</code>, <code>dbPort</code>, 分别表示数据库的用户名，使用 <code>fmt.sprintf</code> 格式化字符串函数构造连接字符串：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字符串中斜杠 &#x27;/&#x27; 是必须的</span></span><br><span class="line">serverDSN := fmt.sprintf(<span class="string">&quot;%s:%s@tcp(%s:%d)/&quot;</span>, dbUser, dbPassword, dbHost, dbPort)</span><br></pre></td></tr></table></figure>
 <p>其中四个变量的数据需要配置各自的数据库数据</p>
@@ -177,143 +215,66 @@ class="article article-type-post"
 
 <p>使用 <code>xorm</code> 自带的 <code>Exec()</code> 方法执行上述语句，完成外键的添加。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ... 已经完成表的初始化</span></span><br><span class="line"><span class="comment">// 添加外键的语句</span></span><br><span class="line"><span class="keyword">var</span> addForiegnKey <span class="type">string</span> = <span class="string">&quot;ALTER TABLE msg ADD CONSTRAINT msg_ibfk_1 FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE&quot;</span></span><br><span class="line"><span class="comment">// 修改表结构</span></span><br><span class="line">_, err := engine.Exec(addForiegnKey)</span><br></pre></td></tr></table></figure>
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2025-04-17T15:48:49.000Z" itemprop="datePublished">2025-04-17</time>
-</div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/" rel="tag">golang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/orm/" rel="tag">orm</a></li></ul>
         </div>
-    
+
     </div>
-</footer>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<nav class="article-nav">
+  
+  
+    <a href="/2025/03/03/test-post/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">test post</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=一次简单的xorm封装(1)：实例化简单引擎并搭建表结构 - EproFymed's Blog&url=https%3A%2F%2Feprofymed.github.io%2F2025%2F04%2F17%2Fxorm-use%2F">
+            <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=一次简单的xorm封装(1)：实例化简单引擎并搭建表结构 - EproFymed's Blog&u=https%3A%2F%2Feprofymed.github.io%2F2025%2F04%2F17%2Fxorm-use%2F">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=一次简单的xorm封装(1)：实例化简单引擎并搭建表结构 - EproFymed's Blog&url=https://eprofymed.github.io/2025/04/17/xorm-use/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
 
 </article>
 
-    
-  
-    
-      <article
-id="post-test-post"
-class="article article-type-post"
->
 
 
 
-<div class="article-inner">
-    
 
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2025/03/03/test-post/">test post</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p><strong>Test Text for hexo</strong></p>
 
-        
-    </div>
-    </div>
 
-    <div class="article-badge">
-        
-        
-    </div>
+
+
+
+
+
+
+
+
 
 </div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2025-03-03T01:24:11.000Z" itemprop="datePublished">2025-03-03</time>
-</div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Test/" rel="tag">Test</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-hello-world"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2025/03/03/hello-world/">Hello World</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2025-03-02T17:26:18.069Z" itemprop="datePublished">2025-03-03</time>
-</div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-
-  
-</div>
-
                 </section>
             </section>
 
@@ -325,6 +286,12 @@ class="article article-type-post"
 <div class="widget" id="widget">
     
       
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
     
       
 
